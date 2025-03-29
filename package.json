@@ -1,6 +1,6 @@
 {
     "name": "create-electron-react-vite-app",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "一个基于 React + Vite + Electron 的跨平台应用模板生成器",
     "type": "module",
     "main": "index.js",
