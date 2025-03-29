@@ -1,0 +1,33 @@
+{
+    "name": "create-electron-react-vite-app",
+    "version": "0.1.0",
+    "description": "一个基于 React + Vite + Electron 的跨平台应用模板生成器",
+    "type": "module",
+    "main": "index.js",
+    "bin": {
+        "create-electron-react-vite-app": "bin/cli.js"
+    },
+    "files": [
+        "bin",
+        "template"
+    ],
+    "keywords": [
+        "react",
+        "vite",
+        "electron",
+        "template",
+        "starter",
+        "boilerplate",
+        "create"
+    ],
+    "author": "",
+    "license": "MIT",
+    "private": false,
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "prompts": "^2.4.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}

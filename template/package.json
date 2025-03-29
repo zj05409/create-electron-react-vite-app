@@ -1,0 +1,65 @@
+{
+    "name": "electron-react-vite-app",
+    "version": "0.1.0",
+    "type": "module",
+    "main": "electron/main.cjs",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "electron:dev": "concurrently \"cross-env BROWSER=none npm run dev\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
+        "electron:build": "npm run build && electron-builder",
+        "electron:build:mac": "npm run build && electron-builder --mac",
+        "electron:build:win": "npm run build && electron-builder --win",
+        "electron:build:linux": "npm run build && electron-builder --linux",
+        "electron:build:all": "npm run build && electron-builder --mac --win --linux",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.2.1",
+        "concurrently": "^8.2.2",
+        "cross-env": "^7.0.3",
+        "electron": "^30.0.1",
+        "electron-builder": "^24.13.1",
+        "vite": "^5.0.10",
+        "wait-on": "^7.2.0"
+    },
+    "build": {
+        "appId": "com.electronapp.app",
+        "productName": "Electron App",
+        "directories": {
+            "output": "release",
+            "buildResources": "public"
+        },
+        "files": [
+            "build/**/*",
+            "electron/**/*"
+        ],
+        "extraMetadata": {
+            "main": "electron/main.cjs"
+        },
+        "mac": {
+            "category": "public.app-category.utilities",
+            "icon": "public/logo512.png"
+        },
+        "win": {
+            "target": [
+                "nsis"
+            ],
+            "icon": "public/logo512.png"
+        },
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb",
+                "tar.gz"
+            ],
+            "category": "Utility",
+            "icon": "public/logo512.png"
+        }
+    }
+}
